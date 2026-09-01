@@ -1,0 +1,20 @@
+[submodule "bitbake"]
+	path = bitbake
+	url = https://git.openembedded.org/bitbake.git
+	branch = 2.18
+[submodule "meta-openembedded"]
+	path = meta-openembedded
+	url = https://github.com/openembedded/meta-openembedded.git
+	branch = wrynose
+[submodule "meta-raspberrypi"]
+	path = meta-raspberrypi
+	url = https://github.com/agherzan/meta-raspberrypi.git
+	branch = wrynose
+[submodule "meta-yocto"]
+	path = meta-yocto
+	url = https://git.yoctoproject.org/meta-yocto.git
+	branch = wrynose
+[submodule "openembedded-core"]
+	path = openembedded-core
+	url = https://git.openembedded.org/openembedded-core.git
+	branch = wrynose
