@@ -9,8 +9,10 @@ IMAGE_FEATURES += " \
     allow-empty-password \
     empty-root-password \
     allow-root-login \
+    splash \
 "
 
 IMAGE_INSTALL += " \
     net-tools \
+    serial-splash \
 "

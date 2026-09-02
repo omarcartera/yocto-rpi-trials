@@ -80,3 +80,17 @@ Power on the Raspberry Pi and the boot log will appear on the host terminal.
 Note: enabling UART fixes the Pi's core clock, which can affect Bluetooth
 performance on Raspberry Pi 3 because the Bluetooth module shares the mini-UART.
 For development debugging this is usually acceptable.
+
+## Boot Splash Screens
+
+The image includes two optional boot branding elements:
+
+- **Display splash** — a framebuffer image shown on the HDMI/display during
+  userspace boot, provided by `psplash`. The image source is
+  `meta-rpi-trials/recipes-core/psplash/files/psplash-rpi-trials-img.png`.
+- **Serial console splash** — ASCII art printed to `/dev/ttyS0` very early in
+  boot. The source text is
+  `meta-rpi-trials/recipes-core/serial-splash/files/serial-splash.txt`.
+
+To change either splash, replace the corresponding file in the layer and
+rebuild `rpi-trials-image`.

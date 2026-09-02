@@ -1,0 +1,14 @@
+[Unit]
+Description=Serial Console Splash
+DefaultDependencies=no
+Before=systemd-show-status.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/serial-splash.sh
+RemainAfterExit=yes
+StandardOutput=inherit
+StandardError=inherit
+
+[Install]
+WantedBy=sysinit.target
