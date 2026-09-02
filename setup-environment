@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# Project-specific setup wrapper for the Yocto build environment.
+# Usage:
+#   . ./setup-environment [build-dir]
+#
+# This selects the rpi-trials template for local.conf and bblayers.conf.
+
+if [ -n "$BASH_SOURCE" ]; then
+    THIS_SCRIPT=$BASH_SOURCE
+elif [ -n "$ZSH_NAME" ]; then
+    THIS_SCRIPT=$0
+else
+    THIS_SCRIPT="$(pwd)/setup-environment"
+fi
+
+PROJECT_ROOT=$(dirname "$(readlink -f "$THIS_SCRIPT")")
+export TEMPLATECONF="${PROJECT_ROOT}/meta-rpi-trials/conf/templates/rpi3-64"
+
+unset THIS_SCRIPT
+
+. "${PROJECT_ROOT}/openembedded-core/oe-init-build-env" "$@"
+
+unset PROJECT_ROOT
