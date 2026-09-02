@@ -1,8 +1,11 @@
 #!/bin/sh
-# Print the project ASCII splash to the serial boot console.
+# Print the project ASCII splash to the kernel console just before login.
 
 if [ -r /etc/serial-splash.txt ]; then
-    # Clear the screen, then print the logo.
-    printf '\033[2J\033[H' >/dev/ttyS0 2>/dev/null || true
-    cat /etc/serial-splash.txt >/dev/ttyS0 2>/dev/null || true
+    # Use /dev/console so output follows the kernel's console= setting.
+    {
+        echo ""
+        cat /etc/serial-splash.txt
+        echo ""
+    } >/dev/console 2>/dev/null || true
 fi

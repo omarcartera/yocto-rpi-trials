@@ -33,7 +33,7 @@ do_install() {
 SYSTEMD_SERVICE:${PN} = "serial-splash.service"
 
 INITSCRIPT_NAME = "serial-splash"
-INITSCRIPT_PARAMS = "start 01 S ."
+INITSCRIPT_PARAMS = "start 99 S ."
 
 FILES:${PN} += " \
     ${sysconfdir}/serial-splash.txt \

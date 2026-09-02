@@ -13,6 +13,7 @@ IMAGE_FEATURES += " \
 IMAGE_INSTALL += " \
     net-tools \
     serial-splash \
+    psplash-raspberrypi \
 "
 
 # Set a known root password (development only)
